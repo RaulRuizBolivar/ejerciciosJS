@@ -19,8 +19,17 @@
 
 
         ancho = parseInt( prompt( 'Dime un ancho' ) )
-        alto = ( regular !== 'si' ) ? parseInt( prompt( 'Dime un alto' ) ) : anchoalto = ancho
-        console.log( 'Alto: ', alto )
+        alto = ( regular !== 'si' ) ? parseInt( prompt( 'Dime un alto' ) ) : alto = ancho
+        if ( isNaN( ancho ) )
+        {
+            alert( 'Ancho no especificado en numero, por defecto serán 200px' )
+            ancho = 200
+        }
+        if ( isNaN( alto ) )
+        {
+            alert( 'Alto no especificado en numero, por defecto serán 200px' )
+            alto = 200
+        }
         redondo = ( redondoUsuario === 'si' ) ? '50%' : '0%'
 
         switch ( colorUsuario )
@@ -39,7 +48,7 @@
                 break
         }
 
-        document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px; border-radius:${ redondo };"></div>'` )
+        document.write( `<div class="figura" style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px; border-radius:${ redondo };"></div>'` )
         /*
         switch ( figura )
         {
