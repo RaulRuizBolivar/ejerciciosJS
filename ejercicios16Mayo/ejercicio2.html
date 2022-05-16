@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    Ejercicio 2
+    <script>
+        // document.write('<div style="background-color: red; width: 100px; height:100px"></div>')
+        const figura = prompt( 'Dime que quieres que dibuje (cuadrado , rectangulo , circulo o elipse)' ).toLocaleLowerCase()
+        const colorUsuario = prompt( 'Dime un color (rojo , verde , azul o morado)' ).toLocaleLowerCase()
+        var ancho, alto, colorFigura;
+
+
+        if ( figura === 'cuadrado' || figura === 'circulo' )
+        {
+            ancho = parseInt( prompt( 'Dime un ancho' ) )
+        } else if ( figura === 'rectangulo' || figura === 'elipse' )
+        {
+            ancho = parseInt( prompt( 'Dime un ancho' ) )
+            alto = parseInt( prompt( 'Dime un alto' ) )
+        }
+        switch ( colorUsuario )
+        {
+            case 'rojo':
+                colorFigura = 'red'
+                break
+            case 'verde':
+                colorFigura = 'green'
+                break
+            case 'azul':
+                colorFigura = 'blue'
+                break
+            case 'morado':
+                colorFigura = 'violet'
+                break
+        }
+
+        switch ( figura )
+        {
+            case 'cuadrado':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ ancho }px"></div>'` )
+                break
+            case 'rectangulo':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px"></div>'` )
+                break
+            case 'circulo':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ ancho }px; border-radius:50%;"></div>'` )
+                break
+            case 'elipse':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px; border-radius:50%;"></div>'` )
+                break
+            default:
+                document.write( '<h1>Escribeme algo que tenga sentido</h1>' )
+        }
+    </script>
+</body>
+
+</html>
