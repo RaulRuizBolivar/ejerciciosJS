@@ -9,22 +9,20 @@
 </head>
 
 <body>
-    Ejercicio 2
+    <h1>Ejercicio 2</h1>
     <script>
-        // document.write('<div style="background-color: red; width: 100px; height:100px"></div>')
-        const figura = prompt( 'Dime que quieres que dibuje (cuadrado , rectangulo , circulo o elipse)' ).toLocaleLowerCase()
+        const regular = prompt( 'Quieres que la figura sea regular?' ).toLocaleLowerCase()
         const colorUsuario = prompt( 'Dime un color (rojo , verde , azul o morado)' ).toLocaleLowerCase()
-        var ancho, alto, colorFigura;
+        const redondoUsuario = prompt( 'Quieres que sea redondo?' ).toLocaleLowerCase()
+        var ancho, alto, colorFigura, redondo;
 
 
-        if ( figura === 'cuadrado' || figura === 'circulo' )
-        {
-            ancho = parseInt( prompt( 'Dime un ancho' ) )
-        } else if ( figura === 'rectangulo' || figura === 'elipse' )
-        {
-            ancho = parseInt( prompt( 'Dime un ancho' ) )
-            alto = parseInt( prompt( 'Dime un alto' ) )
-        }
+
+        ancho = parseInt( prompt( 'Dime un ancho' ) )
+        alto = ( regular !== 'si' ) ? parseInt( prompt( 'Dime un alto' ) ) : anchoalto = ancho
+        console.log( 'Alto: ', alto )
+        redondo = ( redondoUsuario === 'si' ) ? '50%' : '0%'
+
         switch ( colorUsuario )
         {
             case 'rojo':
@@ -41,6 +39,8 @@
                 break
         }
 
+        document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px; border-radius:${ redondo };"></div>'` )
+        /*
         switch ( figura )
         {
             case 'cuadrado':
@@ -58,6 +58,7 @@
             default:
                 document.write( '<h1>Escribeme algo que tenga sentido</h1>' )
         }
+        */
     </script>
 </body>
 
