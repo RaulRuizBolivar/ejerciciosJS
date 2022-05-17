@@ -18,13 +18,16 @@
 
         if ( edad >= EDAD_MINIMA )
         {
-            mensaje += 'Anda pasa xD'
+            mensaje = 'Anda pasa xD'
         } else if ( edad < EDAD_MINIMA && edad > 0 )
         {
-            mensaje += ' pa\' tu casa a ver Pocoyó'
+            mensaje = ' pa\' tu casa a ver Pocoyó'
+        } else
+        {
+            mensaje = 'Los parametros no son correctos'
         }
 
-        if ( vip === VIP )
+        if ( nombre === VIP )
         {
             mensaje = 'Anda y vete a hacer el precurso que te vas a comer los mocos <br> * Le golpea *'
         }
